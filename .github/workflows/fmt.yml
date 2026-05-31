@@ -1,0 +1,23 @@
+name: Check Formatting
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on: [push, pull_request]
+
+jobs:
+  formatting_check:
+    name: Code quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: wykies/checkout@main
+      - uses: taiki-e/install-action@main
+        with:
+          tool: dprint
+      - name: Show version information
+        shell: bash
+        run: dprint --version
+      - name: Ensure `fmt` has been run
+        run:  dprint check

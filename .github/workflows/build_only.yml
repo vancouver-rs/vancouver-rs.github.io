@@ -1,0 +1,26 @@
+name: Build Only
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - name: Build only
+        uses: shalzz/zola-deploy-action@v0.22.1
+        env:
+          OUT_DIR: docs
+          BUILD_DIR: .
+          BUILD_ONLY: true
+          BUILD_FLAGS: --drafts
