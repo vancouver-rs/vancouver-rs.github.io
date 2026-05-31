@@ -7,12 +7,42 @@ transparent = true
 extra = { disable_check_series = true, disable_check_tag = true }
 +++
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet erat quam. Sed vitae ornare felis. Nullam id consequat orci. Morbi viverra, nisl sed consectetur dictum, diam erat tempor mauris, vitae dictum leo turpis id velit. Integer scelerisque tincidunt felis vitae gravida. Nullam quis mollis sapien, ac ullamcorper libero. Curabitur tempor viverra dolor, vitae tempor dui imperdiet sit amet. Curabitur placerat massa sed magna pellentesque pharetra. Maecenas ac nunc vel neque volutpat posuere ac in lectus. Sed tincidunt aliquet elit vel tristique.
+We are now open for hybrid in-person & virtual meetups. See the event page for details on the location.
 
-Donec interdum efficitur purus eu gravida. Ut ullamcorper nisl non velit suscipit pulvinar. Vivamus ipsum odio, luctus eu diam id, mattis dictum magna. Curabitur dapibus, est ut rhoncus dictum, sem nunc convallis quam, id hendrerit felis risus vel leo. Nunc vel laoreet metus, eu fringilla est. Aenean libero arcu, tincidunt pellentesque nulla quis, vehicula porta nisl. Etiam dapibus hendrerit erat non tristique. Aliquam et justo in sapien euismod accumsan quis sed tortor. Phasellus id tortor sed ligula iaculis rutrum quis quis ipsum. Sed sit amet imperdiet elit, eget elementum ipsum. Nunc mattis purus tortor, quis posuere tellus pellentesque convallis.
+The Vancouver Rust Meetup is a community for programmers already working with Rust or interested in using it for personal or professional projects.
 
-Duis porta nulla et tortor aliquam, sit amet varius nulla egestas. Ut et mauris augue. Ut fringilla tincidunt quam ut eleifend. Cras sollicitudin massa nec nulla posuere tincidunt. Donec consectetur risus purus, id ullamcorper tellus dapibus sit amet. Ut a imperdiet nisi, molestie pretium lorem. Ut convallis pharetra interdum. Donec pretium, urna at hendrerit semper, tortor justo sodales dui, vitae tincidunt orci diam ut diam. Maecenas id cursus lorem. Proin vehicula eu ipsum at rutrum. Phasellus lobortis cursus ante in consequat. Aenean vel ex ac nisi maximus blandit eget ut urna.
+We meet once a month for studying or talking about the language and its ecosystem. We do our best to start every meetup with a presentation on a specific topic that usually motivates passionate conversations.
 
-Nunc et lectus et odio pellentesque congue ac a risus. Mauris et magna egestas metus pretium mattis vitae id eros. Vivamus in sollicitudin odio, nec mattis ex. Aliquam elit diam, rutrum in sapien nec, consequat congue est. In ac felis placerat, ornare leo eu, mattis nisl. Vivamus ac velit in lorem pretium tincidunt. Nunc varius condimentum libero, in pulvinar orci.
+Some of our members use Rust in production but it's also a great place for less experienced Rustaceans. All that matters is that we learn together.
 
-Morbi tincidunt enim vitae pharetra venenatis. Phasellus nulla lectus, dapibus vel ipsum efficitur, dapibus tincidunt quam. Aliquam congue, ex interdum scelerisque rhoncus, urna augue fermentum justo, ut elementum leo neque ut nunc. Phasellus id lorem at magna congue varius eget at felis. Integer fermentum pellentesque nisi eget luctus. Nulla vitae urna quis lacus finibus placerat eget sit amet urna. Duis et dolor leo. Proin vitae turpis quis sem egestas viverra sit amet a justo. Vivamus aliquet risus nisl, facilisis venenatis nibh lacinia sed. Suspendisse vitae pretium neque. In pellentesque efficitur magna nec hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+As a community, we adhere to the [Rust Code of Conduct](https://www.rust-lang.org/conduct.html).
+
+---
+
+Discord - <https://discord.gg/43UQtwmTqe>
+
+Past Meetup Archive on [YouTube](https://www.youtube.com/channel/UCgXHm9MdVMa3pHCHv6I1bJg)
+
+---
+
+Call For Participation
+
+Are you interested in presenting at the meetup? Do you want to share an interesting talk or show off a cool Rust project? If so, then come and present here at the Vancouver Rust meetups!
+
+[Here is what you will need to know if you want to present.](https://docs.google.com/document/d/1f-fTARnT6EKemW8598wuMF_lfHzqAJkI80skbbTRhrk/edit?usp=sharing)
+
+---
+
+Sponsors
+
+[Improving Vancouver](https://improving.com/locations/vancouver/)
+
+---
+
+Supported by:
+
+<!-- <img src="your-image.png" alt="Description" > -->
+
+<a href="https://www.jetbrains.com/"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg" alt="JetBrains logo." style="background-color: #ffffff; padding: 10px;"></a>
+
+Copyright © 2026 JetBrains s.r.o. JetBrains and the JetBrains logo are trademarks of JetBrains s.r.o.
