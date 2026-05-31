@@ -95,7 +95,6 @@ smart_punctuation = true
 insert_anchor_links = "heading"
 
 [markdown.highlighting]
-# See change log for details on migration https://github.com/c-git/zola/blob/master/CHANGELOG.md#0220-2026-01-09
 theme = "github-dark"
 
 [link_checker]
@@ -174,7 +173,6 @@ banner = "logo.png" # Used as default image for OpenGraph/Twitter if page specif
 # twitter_meta = "your-user-name" # for SEO: twitter:site and twitter:creator
 # google = "Your Google Site verification code."
 # bing = "Your Bing Site verification code."
-meetup = "https://www.meetup.com/vancouver-rust/"
 seo = true # enable or disable seo-related meta tags: opengraph, facebook, twitter
 # dev = false # development mode, if true then robots.txt should prevent search indexing.
 
@@ -191,7 +189,7 @@ feed = false # this adds the RSS feed icon in the footer.
 # element = "matrix.example.com"
 # buymeacoffee = "your-user-name"
 # kofi = "your-user-name"
-discord = "43UQtwmTqe" # Everything after https://discord.com/   eg: invite/my-server  *or*  servers/my-server-id
+# discord = "43UQtwmTqe" # Everything after https://discord.com/   eg: invite/my-server  *or*  servers/my-server-id
 # twitter = "your-user-name"
 # facebook = "your-user-name"
 # linkedin = "your-user-name"
@@ -207,7 +205,7 @@ github = "vancouver-rs"
 # pixelfed = "https://pixelfed.example.com/" # Heaviest icon, off by default
 # pinterest = "your-user-name"
 # twitch = "your-user-name"
-youtube = "channel/UCgXHm9MdVMa3pHCHv6I1bJg"
+# youtube = "channel/UCgXHm9MdVMa3pHCHv6I1bJg"
 # researchgate = "your-profile-id"
 
 ###############################################################################
