@@ -19,9 +19,13 @@ As a community, we adhere to the [Rust Code of Conduct](https://www.rust-lang.or
 
 ---
 
+## Links
+
 Discord - <https://discord.gg/43UQtwmTqe>
 
 Past Meetup Archive on [YouTube](https://www.youtube.com/channel/UCgXHm9MdVMa3pHCHv6I1bJg)
+
+[Our Meetup Page](https://www.meetup.com/vancouver-rust/)
 
 ---
 
