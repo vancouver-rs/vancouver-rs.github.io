@@ -25,7 +25,7 @@ Past Meetup Archive on [YouTube](https://www.youtube.com/channel/UCgXHm9MdVMa3pH
 
 ---
 
-Call For Participation
+## Call For Participation
 
 Are you interested in presenting at the meetup? Do you want to share an interesting talk or show off a cool Rust project? If so, then come and present here at the Vancouver Rust meetups!
 
@@ -33,13 +33,13 @@ Are you interested in presenting at the meetup? Do you want to share an interest
 
 ---
 
-Sponsors
+## Sponsors
 
 [Improving Vancouver](https://improving.com/locations/vancouver/)
 
 ---
 
-Supported by:
+## Supported by
 
 <!-- <img src="your-image.png" alt="Description" > -->
 
