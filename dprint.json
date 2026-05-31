@@ -1,9 +1,8 @@
 {
-  "typescript": {},
   "markdown": {},
   "toml": {},
   "excludes": [
-    "**/node_modules"
+    "themes/"
   ],
   "plugins": [
     "https://plugins.dprint.dev/markdown-0.22.1.wasm",
