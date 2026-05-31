@@ -9,23 +9,53 @@ description = "The Vancouver Rust Meetup is a community for programmers already 
 theme = "abridge"
 
 default_language = "en"
+
+# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
+
+# When set to "true", the generated HTML files are minified.
 minify_html = false
+
+# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+# For overriding the default output directory `public`, set it to another value (e.g.: "docs")
 output_dir = "docs"
+
+# When set to "true", a feed is automatically generated.
 generate_feeds = true # TODO: Disable feeds
+
 taxonomies = [
   #    {name = "categories", feed = true},
   { name = "tags", feed = true },
 ]
 
+# A list of glob patterns specifying asset files to ignore when the content
+# directory is processed. Defaults to none, which means that all asset files are
+# copied over to the `public` directory
 # ignored_content = []
+
+# Similar to ignored_content, a list of glob patterns specifying asset files to
+# ignore when the static directory is processed. Defaults to none, which means
+# that all asset files are copied over to the `public` directory
 # ignored_static = ["apple-touch-icon.png","banner.png","safari-pinned-tab.svg","favicon*","m*.png","android-chrome*png"]
 
-# feed_filename = "atom.xml"
-# output_dir = "public"
+# The filenames to use for the feeds. Used as the template filenames, too.
+# Defaults to ["atom.xml"], which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+# feed_filenames = ["atom.xml"]
+
+# The number of articles to include in the feed. All items are included if
+# this limit is not set (the default).
+# feed_limit = 20
+
 # ignored_content = ["*.{graphml,xlsx}", "temp.*"]
-# hard_link_static = false # set to true to hard link instead of copying, useful for very large files.
+
+# When set to "true", files in the `static` directory are hard-linked. Useful for large
+# static files. Note that for this to work, both `static` and the
+# output directory need to be on the same filesystem. Note that the theme's `static`
+# files are always copied, regardless of this setting.
+# hard_link_static = false
 
 [search] # Options specific to elasticlunr search.
 # index format can be: elasticlunr_json or elasticlunr_javascript or fuse_json
@@ -35,16 +65,44 @@ include_description = true # include description of page/section in index
 include_content = true # include rendered content of page/section in index
 # truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
 
+# Configuration of the Markdown rendering
 [markdown]
+# Whether footnotes are rendered in the GitHub-style (at the bottom, with back references) or plain (in the place, where they are defined)
 bottom_footnotes = true # adds footnote backreference
+
+# When set to "true", emoji aliases translated to their corresponding
+# Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
 render_emoji = false
-external_links_target_blank = true # rel="noopener"
-external_links_no_follow = false # rel="nofollow"
-external_links_no_referrer = false # rel="noreferrer"
-smart_punctuation = false # `...` to `…`, `"quote"` to `“curly”` etc
+
+# Whether external links are to be opened in a new tab
+# If this is true, a `rel="noopener"` will always automatically be added for security reasons
+external_links_target_blank = true
+
+# Whether to set rel="nofollow" for all external links
+external_links_no_follow = false
+
+# Whether to set rel="noreferrer" for all external links
+external_links_no_referrer = false
+
+# Whether smart punctuation is enabled (changing quotes, dashes, dots in their typographic form)
+# For example, `...` into `…`, `"quote"` into `“curly”` etc
+smart_punctuation = true
+
+# This determines whether to insert a link for each header
+# The default template can be overridden by creating an `anchor-link.html` file in the `templates` directory.
+# This value can be "left", "right", "heading" or "none".
+# "heading" means the full heading becomes the text of the anchor.
+insert_anchor_links = "heading"
 
 [markdown.highlighting]
-theme = "synthwave-84"
+# See change log for details on migration https://github.com/c-git/zola/blob/master/CHANGELOG.md#0220-2026-01-09
+theme = "github-dark"
+
+[link_checker]
+# Skip link checking for external URLs that start with these prefixes
+skip_prefixes = []
+# Skip anchor checking for external URLs that start with these prefixes
+skip_anchor_prefixes = []
 
 [extra]
 ###############################################################################
@@ -57,13 +115,13 @@ theme = "synthwave-84"
 menu = [
   #    {url = "blog", name = "Blog", slash = true, blank = false, size="s110"},
   #    {url = "about", name = "About", slash = true, blank = false, size="s110"},
-  { url = "archive", name = "Posts", slash = true, blank = false, size = "s110" },
+  # { url = "archive", name = "Posts", slash = true, blank = false, size = "s110" },
   #    {url = "categories", name = "Categories", slash = true, blank = false, size="s110"},
-  { url = "tags", name = "Tags", slash = true, blank = false, size = "s110" },
+  # { url = "tags", name = "Tags", slash = true, blank = false, size = "s110" },
 ]
 menu_footer = [
-  { url = "about", name = "About", slash = true, blank = false, size = "s90" },
-  { url = "contact", name = "Contact", slash = true, blank = false, size = "s90" },
+  # { url = "about", name = "About", slash = true, blank = false, size = "s90" },
+  # { url = "contact", name = "Contact", slash = true, blank = false, size = "s90" },
   { url = "privacy", name = "Privacy", slash = true, blank = false, size = "s90" },
   { url = "sitemap.xml", name = "Sitemap", slash = false, blank = true, size = "s90" },
 ]
@@ -89,17 +147,17 @@ footer_credit = true
 # archive_reverse = true # Set to True to sort posts chronologically per year instead of newest first on the archive page: example.com/archive/
 
 ### Uncomment one of the below lines, or neither, depending on which type of logo you want to use:
-# logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
+logo = { file = "logo-300x102.png", width = "75", height = "32", alt = "Logo", text = " &nbsp; Vancouver Rust" }
 # textlogo = '<font color="#f90">A</font>bridge'
-textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="28" height="28"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
+# textlogo = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#f90" viewBox="0 0 96 96" width="28" height="28"><path stroke-width="14" d="M14 99 46 7h4l32 92"/><path stroke-width="9" d="M-3 82c43-26 59-26 102 0"/><path stroke-linecap="round" stroke-width="1.5" d="M94 72v7m-5-9.8v7m-5-9.8v7.1M79 64v7M63 57.7v7m-5-8.2v7m-5-7.8v7m-5-7.2v7m-5-6.7v7m-5-6.3v7m-5-5.8v7M17 64v7m-5-4.6v7m-5-4.2v7M2 72v7"/></svg>bridge'
 
 sitedesc = false # enables or disables the display of the site description below the logo.
-headhr = false # show or hide horizontal rule below header
-foothr = false # show or hide horizontal rule above footer
+headhr = true # show or hide horizontal rule below header
+foothr = true # show or hide horizontal rule above footer
 
 ### $CURRENT_YEAR and $SITE_TITLE can be used anywhere within the copyright, you can change their position or you can also delete them and type whatever you want instead.
 # copyright = false # set to false to disable the copyright.
-# copyright_override = '© 2019-$CURRENT_YEAR $SITE_TITLE'
+copyright_override = '© 2026-$CURRENT_YEAR $SITE_TITLE'
 # copyright_override = '© $CURRENT_YEAR $SITE_TITLE • Website content is licensed <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.'
 
 ###############################################################################
@@ -109,13 +167,14 @@ foothr = false # show or hide horizontal rule above footer
 ###############################################################################
 
 title_separator = "|" # Separator between title and title_addition, set as |, -, _, etc
-title_addition = "Fast, Lightweight, and Modern Zola Theme" # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
-author = "Jake G" # Put Your Name here
-keywords = "Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" # used for the primary site index
-banner = "banner.png" # Used as default image for OpenGraph/Twitter if page specific image is undefined.
-twitter_meta = "your-user-name" # for SEO: twitter:site and twitter:creator
-google = "Your Google Site verification code."
-bing = "Your Bing Site verification code."
+title_addition = "For Current and Aspiring Rustaceans" # a default value for title addition (for SEO aim for 50-70 characters including the title and separator 'Abridge | title_addition')
+author = "Vancouver Rust" # Put Your Name here
+keywords = "Rust, Vancouver, Meetup" # used for the primary site index
+banner = "logo.png" # Used as default image for OpenGraph/Twitter if page specific image is undefined.
+# twitter_meta = "your-user-name" # for SEO: twitter:site and twitter:creator
+# google = "Your Google Site verification code."
+# bing = "Your Bing Site verification code."
+meetup = "https://www.meetup.com/vancouver-rust/"
 seo = true # enable or disable seo-related meta tags: opengraph, facebook, twitter
 # dev = false # development mode, if true then robots.txt should prevent search indexing.
 
@@ -126,32 +185,30 @@ seo = true # enable or disable seo-related meta tags: opengraph, facebook, twitt
 ###   https://github.com/Jieiku/abridge/blob/master/templates/macros/social.html
 ###############################################################################
 
-feed = true # this adds the RSS feed icon in the footer.
-mail = "name@example.com"
-mastodon = "https://mastodon.example.com/@username"
-element = "matrix.example.com"
+feed = false # this adds the RSS feed icon in the footer.
+# mail = "name@example.com"
+# mastodon = "https://mastodon.example.com/@username"
+# element = "matrix.example.com"
 # buymeacoffee = "your-user-name"
-kofi = "your-user-name"
-# discord = "https://discord.com/invite/my-server" # https://discord.com/invite/my-server  *or*  https://discord.com/servers/my-server-id
+# kofi = "your-user-name"
+discord = "43UQtwmTqe" # Everything after https://discord.com/   eg: invite/my-server  *or*  servers/my-server-id
 # twitter = "your-user-name"
 # facebook = "your-user-name"
 # linkedin = "your-user-name"
 # gitlab = "your-user-name"
-github = "your-user-name"
+github = "vancouver-rs"
 # codeberg = "your-user-name" # Everything after https://codeberg.org/   eg: username  *or*  username/repository
 # github_sponsor = "your-user-name"
 # bitbucket = "your-user-name"
 # python = "your-user-name"
 # docker = "your-user-name"
 # stack = "your-user-name"
-instagram = "your-user-name"
+# instagram = "your-user-name"
 # pixelfed = "https://pixelfed.example.com/" # Heaviest icon, off by default
 # pinterest = "your-user-name"
-twitch = "your-user-name"
-youtube = "channel/your-channel-id"
-# peertube = "https://peertube.example.com/@username"
+# twitch = "your-user-name"
+youtube = "channel/UCgXHm9MdVMa3pHCHv6I1bJg"
 # researchgate = "your-profile-id"
-# telegram = "your-user-name"
 
 ###############################################################################
 ### Resource Files
@@ -195,8 +252,8 @@ webmanifest = "manifest.min.json" # Required for PWAs
 ###  The options below other than pwa=true, only come into play when the npm/node script is ran.
 ###############################################################################
 
-pwa = true # true to load the service worker
-pwa_VER = '3.12.1' # Service Worker cache version. (increment if you need to force a new cache)
+pwa = false # true to load the service worker
+pwa_VER = '1.0.0' # Service Worker cache version. (increment if you need to force a new cache)
 
 ### 3600=1hour, 28800=8hours, 86400=1day, 604800=1week, 1209600=2weeks
 pwa_NORM_TTL = 0 #  86400 is reasonable. html, json, xml, anything else undefined
@@ -225,13 +282,13 @@ pwa_IGNORE_FILES = ["_headers", "sw.min.js", "sw.js"]
 ###############################################################################
 
 favicon_theme_color = "#333333"
-favicon_ms_color = "#333333"
-favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
-favicon_mask_color = "#ff9900"
-favicon_svg = "favicon.svg" # favicon.svg
-favicon180 = "apple-touch-icon.png" # apple-touch-icon.png
+# favicon_ms_color = "#333333"
+# favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
+# favicon_mask_color = "#ff9900"
+# favicon_svg = "favicon.svg" # favicon.svg
+favicon180 = "favicon-180x180.png" # apple-touch-icon.png
 favicon32 = "favicon-32x32.png" # favicon-32x32.png
-favicon16 = "favicon-16x16.png" # favicon-16x16.png
+# favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 ###############################################################################
 ### Commenting System for visitors to leave comments on pages.
@@ -263,6 +320,14 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 # icon_next = "svgs svgh angr" # Pagination Next Page.
 # icon_last = "svgs svgh angrr" # Pagination Last Page.
 # icon_top = "svgs svgh angu" # Back to Top Button.
+
+# icon_search = false
+# icon_adjust = false
+# icon_first = false
+# icon_prev = false
+# icon_next = false
+# icon_last = false
+# icon_top = false
 
 # icon_read = "svgs fa-solid fa-glasses" # displayed in metadata on index and below title on page.
 # icon_date = "svgs fa-solid fa-calendar" # displayed in metadata on index and below title on page.
@@ -330,8 +395,8 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 ### Load Katex Local Resources
 # katex_css = "katex.min.css" # Fonts - load the css/fonts locally
-# katex_js = "js/katex.min.js" # use local js, so that we dont have to whitelist cdn.jsdelivr.net for script src in CSP
-# mathtex_js = "js/mathtex-script-type.min.js" # use local js, so that we dont have to whitelist cdn.jsdelivr.net for script src in CSP
+# katex_js = "js/katex.min.js" # use local js, so that we don't have to whitelist cdn.jsdelivr.net for script src in CSP
+# mathtex_js = "js/mathtex-script-type.min.js" # use local js, so that we don't have to whitelist cdn.jsdelivr.net for script src in CSP
 # katex_autorender_js = "js/katex-auto-render.min.js"
 
 ### Load Katex External Resources
